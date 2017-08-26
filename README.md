@@ -1,2 +1,2 @@
 # KaggleTitanic_Python
-This file contains Python code for the Kaggle competition. 
+This file contains the Python code for the Kaggle competition. 
