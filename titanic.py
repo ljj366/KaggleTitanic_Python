@@ -49,28 +49,6 @@ Data['Fare'] = Data['Fare'].fillna(Data.loc[Data.Pclass== int(Data[Data.Fare.isn
 #### Feature Engineering ####
 
 ## create title 
-'''def get_title(name):
-    if '.' in name:
-        return name.split(',')[1].split('.')[0].strip()
-    else:
-        return 'Unknown'
-
-# summarize infreq types
-def title_comb(title):
-    if title in ['Mr','Miss','Mrs','Ms','Mlle','Mme']:
-        return 'Ordinary'
-    elif title in ['Master']:
-        return 'Master'
-    else:
-        return 'Other'
-  
-Data['Title'] = Data['Name'].apply(get_title).apply(title_comb) 
-
-# summarize all the ordinary people together since these titles either differ in age or sex
-Data.loc[ Data.Title.isin (['Mr','Miss','Mrs','Ms','Mlle','Mme']) ,'Title' ] = 'Ordinary'
-Data.loc[ -Data.Title.isin(['Ordinary','Master']) ,'Title'] = 'Other'
-'''
-
 Data['Title'] = Data['Name'].str.split("[\,\.]").apply(lambda x: x[1]).str.strip()
 # aggregate title
 Title_Dictionary = {
